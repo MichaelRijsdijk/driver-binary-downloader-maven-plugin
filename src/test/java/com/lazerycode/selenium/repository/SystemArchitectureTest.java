@@ -29,12 +29,12 @@ public class SystemArchitectureTest {
     }
 
     @Test
-    public void willReturn32BitArchitectureForAnythingElse() {
+    public void willReturnARMArchitectureForAnythingElse() {
 
         SystemArchitecture systemArchitecture = getSystemArchitecture("foo");
 
         assertThat(systemArchitecture,
-                is(equalTo(ARCHITECTURE_32_BIT)));
+                is(equalTo(ARCHITECTURE_ARM)));
     }
 
     @Test

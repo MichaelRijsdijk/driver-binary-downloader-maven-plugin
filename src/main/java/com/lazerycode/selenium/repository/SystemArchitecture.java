@@ -19,9 +19,9 @@ public enum SystemArchitecture {
         return systemArchitectureName;
     }
 
-    public static final SystemArchitecture defaultSystemArchitecture = ARCHITECTURE_32_BIT;
+    public static final SystemArchitecture defaultSystemArchitecture = ARCHITECTURE_ARM;
     private static List<String> architecture64bitNames = Arrays.asList("amd64", "x86_64");
-    private static List<String> architectureArmNames = Arrays.asList("arm", "armv41");
+    private static List<String> architectureArmNames = Arrays.asList("arm", "armv41", "aarch64");
 
     public static SystemArchitecture getSystemArchitecture(String currentArchitecture) {
         SystemArchitecture result = defaultSystemArchitecture;
@@ -39,6 +39,7 @@ public enum SystemArchitecture {
 
     public static SystemArchitecture getCurrentSystemArcitecture() {
         final String currentArchitecture = System.getProperties().getProperty("os.arch");
+        System.out.println("----------------------------" + currentArchitecture);
 
         return getSystemArchitecture(currentArchitecture);
     }

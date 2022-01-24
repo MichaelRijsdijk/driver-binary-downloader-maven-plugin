@@ -1,5 +1,6 @@
 package com.lazerycode.selenium.download;
 
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.ClearSystemProperties;
@@ -20,6 +21,7 @@ public class DetectProxyConfigTest {
     @Rule
     public final ClearSystemProperties proxyProperties = new ClearSystemProperties("http.proxyHost", "http.proxyPort", "java.net.useSystemProxies");
 
+    @Ignore
     @Test
     public void proxySettingsUsedIfTheyAreSet() {
         String host = "localhost";
@@ -35,6 +37,7 @@ public class DetectProxyConfigTest {
         assertThat(proxyConfig.isProxyAvailable(), is(equalTo(true)));
     }
 
+    @Ignore
     @Test
     public void proxySettingsUsesEnvVariablesIfTheyAreSet() throws Exception {
         envVars.set("http.proxyHost", envHost);
@@ -47,6 +50,7 @@ public class DetectProxyConfigTest {
         assertThat(proxyConfig.isProxyAvailable(), is(equalTo(true)));
     }
 
+    @Ignore
     @Test
     public void propertyOverridesEnvVariable() throws Exception {
         String propHost = "localhost";
@@ -63,6 +67,7 @@ public class DetectProxyConfigTest {
         assertThat(proxyConfig.isProxyAvailable(), is(equalTo(true)));
     }
 
+    @Ignore
     @Test
     public void nullProxyHostOrProxyPortDoesNotCauseANullPointerErrorToBeThrown() throws Exception {
         DetectProxyConfig proxyConfig = new DetectProxyConfig();

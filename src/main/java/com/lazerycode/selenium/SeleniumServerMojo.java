@@ -200,6 +200,7 @@ public class SeleniumServerMojo extends AbstractMojo {
         LOG.info(" ");
         LOG.info("--------------------------------------------------------");
         LOG.info(" DOWNLOADING SELENIUM STAND-ALONE EXECUTABLE BINARIES...");
+        LOG.info(" USING LOCAL PLUGIN.....................................");
         LOG.info("--------------------------------------------------------");
         LOG.info(" ");
         setRepositoryMapFile();
